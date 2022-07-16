@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import * as React from "react";
 import {
@@ -10,14 +9,9 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Button,
-  Form,
-  InputGroup,
-  FormControl,
-  FloatingLabel
 } from 'react-bootstrap';
-import {
-  Search
-} from 'react-bootstrap-icons';
+import SearchForm from './Search'
+import ResultForm from './Result';
 
 function App() {
   return (
@@ -51,31 +45,8 @@ function Main() {
   return (
     <>
       <main className="container">
-        <Form className="mb-3" id="searchForm">
-          <Form.Label>Location</Form.Label>
-          <InputGroup className="mb-3">
-            <FormControl
-              placeholder="Search"
-            />
-            <Button variant='outline-secondary' type="submit">
-              <Search />
-            </Button>
-          </InputGroup>
-        </Form>
-
-        <Form.Label>Coordinates</Form.Label>
-        <div className="row g-2">
-          <div className="col-md">
-            <FloatingLabel controlId="floatingLongitude" label="Longitude">
-              <Form.Control type="number" placeholder="Longitude" disabled/>
-            </FloatingLabel>
-          </div>
-          <div className="col-md">
-            <FloatingLabel controlId="floatingLatitude" label="Latitude">
-              <Form.Control type="number" placeholder="Latitude" disabled/>
-            </FloatingLabel>
-          </div>
-        </div>
+        <SearchForm/>
+        <ResultForm/>
       </main>
       <nav className="container">
         <Link to="/">Exit</Link>
