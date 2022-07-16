@@ -7,74 +7,78 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  Button,
+  Form,
+  InputGroup,
+  FormControl,
+  FloatingLabel
+} from 'react-bootstrap';
+import {
+  Search
+} from 'react-bootstrap-icons';
 
 function App() {
   return (
-    <div>
-      <header>
-        <h1>Welcome to React Router!</h1>
+    <>
+      <header className="container">
+        <h1>Coordinates Finder</h1>
       </header>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="main" element={<Main />} />
         </Routes>
       </Router>
-    </div>
+    </>
   );
 }
 
 function Home() {
   return (
     <>
-      <main>
-        <h2>Welcome to the homepage!</h2>
-        <p>You can do this, I believe in you.</p>
+      <main className="container">
+        <Button variant="secondary" href="/main" className="text-uppercase d-grid gap-2">
+        Welcome and click to enter
+        </Button>
       </main>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
     </>
   );
 }
 
-function About() {
+function Main() {
   return (
     <>
-      <main>
-        <h2>Who are we?</h2>
-        <p>
-          That feels like an existential question, don't you
-          think?
-        </p>
+      <main className="container">
+        <Form className="mb-3" id="searchForm">
+          <Form.Label>Location</Form.Label>
+          <InputGroup className="mb-3">
+            <FormControl
+              placeholder="Search"
+            />
+            <Button variant='outline-secondary' type="submit">
+              <Search />
+            </Button>
+          </InputGroup>
+        </Form>
+
+        <Form.Label>Coordinates</Form.Label>
+        <div className="row g-2">
+          <div className="col-md">
+            <FloatingLabel controlId="floatingLongitude" label="Longitude">
+              <Form.Control type="number" placeholder="Longitude" disabled/>
+            </FloatingLabel>
+          </div>
+          <div className="col-md">
+            <FloatingLabel controlId="floatingLatitude" label="Latitude">
+              <Form.Control type="number" placeholder="Latitude" disabled/>
+            </FloatingLabel>
+          </div>
+        </div>
       </main>
-      <nav>
-        <Link to="/">Home</Link>
+      <nav className="container">
+        <Link to="/">Exit</Link>
       </nav>
     </>
   );
