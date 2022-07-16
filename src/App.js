@@ -10,8 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Button,
 } from 'react-bootstrap';
-import SearchForm from './Search'
-import ResultForm from './Result';
+import Main from './Main'
 
 function App() {
   return (
@@ -37,20 +36,6 @@ function Home() {
         Welcome and click to enter
         </Button>
       </main>
-    </>
-  );
-}
-
-function Main() {
-  return (
-    <>
-      <main className="container">
-        <SearchForm/>
-        <ResultForm/>
-      </main>
-      <nav className="container">
-        <Link to="/">Exit</Link>
-      </nav>
     </>
   );
 }

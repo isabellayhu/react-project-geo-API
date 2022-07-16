@@ -20,9 +20,9 @@ class SearchForm extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-      }
+    }
 
-      async handleChange(event) {
+    async handleChange(event) {
         const searchText = event.target.value
 
         this.setState({ isLoading: true })
@@ -34,11 +34,15 @@ class SearchForm extends React.Component {
             newPlaces[key] = val;
         });
 
-        this.setState({ isLoading: false, places: newPlaces })
-        
-      }
-    handleSubmit (event) {
-       event.preventDefault();
+        this.setState({ isLoading: false, places: newPlaces, searchText })
+    }
+    
+    handleSubmit(event) {
+        event.preventDefault();
+        const newplace = this.state.places[this.state.searchText];
+        if (newplace){
+            this.props.updateCoordinates(newplace.geometry.coordinates[0],newplace.geometry.coordinates[1])
+        }
     }
 
     async fetchSuggestions(searchText) {
@@ -48,12 +52,11 @@ class SearchForm extends React.Component {
 
     render () {
         return (
-            <Form className="mb-3" id="searchForm">
+            <Form className="mb-3" id="searchForm" onSubmit={this.handleSubmit}>
                 <Form.Label>Location</Form.Label>
                 <InputGroup className="mb-3">
                     <FormControl list="suggestions" placeholder="Search" onChange={this.handleChange} />
                     <DataList list={"suggestions"} places={this.state.places} />
-
                     <Button variant='outline-secondary' type="submit">
                         <Search />
                     </Button>
