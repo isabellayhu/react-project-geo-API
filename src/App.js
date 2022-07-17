@@ -8,13 +8,14 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Button,
+  Card
 } from 'react-bootstrap';
 import Main from './Main'
 import SavedPlaces from './SavedPlaces'
 
 function App() {
   return (
-    <>
+    <Card style={{background:'#ffffffd0', padding:'2em', borderRadius:'30px'}}>
       <header className="container">
         <h1>Coordinates Finder</h1>
       </header>
@@ -25,7 +26,7 @@ function App() {
           <Route path="savedPlaces" element={<SavedPlaces />} />
         </Routes>
       </Router>
-    </>
+    </Card>
   );
 }
 

@@ -9,3 +9,13 @@ header {
 nav {
   text-align: center;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url(https://source.unsplash.com/1600x900/?world);
+  background-size: cover;
+}
