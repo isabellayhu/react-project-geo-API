@@ -1,4 +1,7 @@
-Run the APP in Delopment Mode: [http://localhost:3000](http://localhost:3000)
+Fork the repository: https://github.com/isabellayhu/react-project-geo-api
+
 ### `yarn start`
-Start Backend Server
+To run the APP in delopment mode: [http://localhost:3000](http://localhost:3000)
+
 ### `yarn json-server`
+To start the backend server
