@@ -41,7 +41,7 @@ class SearchForm extends React.Component {
         event.preventDefault();
         const newplace = this.state.places[this.state.searchText];
         if (newplace){
-            this.props.updateCoordinates(newplace.geometry.coordinates[0],newplace.geometry.coordinates[1])
+            this.props.updatePlace(this.state.searchText,newplace.geometry.coordinates[0],newplace.geometry.coordinates[1])
         }
     }
 

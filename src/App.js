@@ -4,13 +4,13 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Button,
 } from 'react-bootstrap';
 import Main from './Main'
+import SavedPlaces from './SavedPlaces'
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="main" element={<Main />} />
+          <Route path="savedPlaces" element={<SavedPlaces />} />
         </Routes>
       </Router>
     </>
