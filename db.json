@@ -11,6 +11,36 @@
       "longitude": 151.21,
       "latitude": -33.868,
       "id": 2
+    },
+    {
+      "placeName": "Testi Garden Tarabya, Sariyer, Sariyer, Istanbul 34457, Turkey",
+      "longitude": 29.030378,
+      "latitude": 41.144889,
+      "id": 3
+    },
+    {
+      "placeName": "Melbourne, Victoria, Australia",
+      "longitude": 144.9632,
+      "latitude": -37.8142,
+      "id": 4
+    },
+    {
+      "placeName": "",
+      "longitude": "",
+      "latitude": "",
+      "id": 5
+    },
+    {
+      "placeName": "Sydney, New South Wales, Australia",
+      "longitude": 151.21,
+      "latitude": -33.868,
+      "id": 6
+    },
+    {
+      "placeName": "Canada",
+      "longitude": -105.750595856519,
+      "latitude": 55.5859012851966,
+      "id": 7
     }
   ]
 }
